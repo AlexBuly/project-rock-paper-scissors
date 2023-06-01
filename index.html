@@ -27,14 +27,14 @@
         The game is played for 5 rounds. 
         */
 
-        // Rock, paper, scissors is defined. 
+        // Player chooses between rock, paper, or scissors.  
 
-        // Player chooses between rock, paper, or scissors. 
-
-        // Prompt disapears and computer makes choice. 
-
-        // Computer makes a choice randomly between rock, paper, or scissors. 
-
+        // Computer makes a choice randomly between rock, paper, or scissors.
+        function getComputerChoice () {
+            const choices = ["Rock", "Paper", "Scissors"];
+            const random = Math.floor(Math.random() * 3);
+            return choices[random];
+        }
         // If player chooses rock and computer chooses paper, return "You lose! Paper beats rock". 
 
         // If player chooses paper and computer chooses scissors, return "You lose! Scissors beat paper."
