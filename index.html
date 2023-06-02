@@ -27,7 +27,20 @@
         The game is played for 5 rounds. 
         */
 
-        // Player chooses between rock, paper, or scissors.  
+        // Player chooses between rock, paper, or scissors.
+        function getPlayerChoice() {
+            const choices = ["rock", "paper", "scissors"];
+            // If choice valid, return choice 
+            while (true) {
+                const choice = prompt("To play, enter rock, paper, or scissors");
+
+                if (choices.includes(choice)) {
+                    return choice;
+                } else {
+                    console.log("Invalid choice. Please enter rock, paper, or scissors");
+                }
+            }
+        }
 
         // Computer makes a choice randomly between rock, paper, or scissors.
         function getComputerChoice () {
@@ -61,7 +74,7 @@
        }
     }
         // Call round 
-        const playerSelection = "paper";
+        const playerSelection = getPlayerChoice();
         const computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
 
