@@ -32,7 +32,7 @@
             const choices = ["rock", "paper", "scissors"];
             // If choice valid, return choice 
             while (true) {
-                const choice = prompt("To play, enter rock, paper, or scissors");
+                const choice = prompt("To play, enter rock, paper, or scissors").toLowerCase();
 
                 if (choices.includes(choice)) {
                     return choice;
@@ -45,15 +45,13 @@
         // Computer makes a choice randomly between rock, paper, or scissors.
         function getComputerChoice() {
             const choices = ["Rock", "Paper", "Scissors"];
-            const random = Math.floor(Math.random() * 3);
+            const random = Math.floor(Math.random() * choices.length);
             return choices[random];
         }
         // Case-insenitive 
         function playRound(playerSelection, computerSelection) {
             playerSelection = playerSelection.toLowerCase();
             computerSelection = computerSelection.toLowerCase();
-        
-
         // If player chooses rock and computer chooses paper, return "You lose! Paper beats rock". 
         // If player chooses paper and computer chooses scissors, return "You lose! Scissors beat paper."
         // If player chooses scissors and computer chooses rock, return "You lose! Rock beats scissors."
