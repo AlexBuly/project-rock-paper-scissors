@@ -31,7 +31,7 @@
             const choices = ["rock", "paper", "scissors"];
             // If choice valid, return choice 
             while (true) {
-                //const choice = prompt("To play, enter rock, paper, or scissors").toLowerCase();
+                const choice = prompt("To play, enter rock, paper, or scissors").toLowerCase();
 
                 if (choices.includes(choice)) {
                     return choice;
