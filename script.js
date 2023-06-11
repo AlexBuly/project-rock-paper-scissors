@@ -1,3 +1,10 @@
+ /* The Rock Paper Scissors Game is no longer played in the console. Instead, it is played 
+    in the browser. The player selection is now controlled with a buttons for rock, paper, 
+    and scissors. When a button is clicked, the player and computer make a choice. The
+    choice information, score, and results are now displayed in the browser. A reset/new 
+    game button is also added. This project uses many DOM methods and also callback 
+    functions. 
+ 
  /* 
         This is a game of Rock Paper Scissors.
         For now, the game is played entirely in the console so there is no user interface. 
@@ -24,7 +31,7 @@
             const choices = ["rock", "paper", "scissors"];
             // If choice valid, return choice 
             while (true) {
-                const choice = prompt("To play, enter rock, paper, or scissors").toLowerCase();
+                //const choice = prompt("To play, enter rock, paper, or scissors").toLowerCase();
 
                 if (choices.includes(choice)) {
                     return choice;
