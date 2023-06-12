@@ -26,6 +26,8 @@
         The game is played for 5 rounds. 
         */
 
+        // When button is clicked, return, rock, paper, or scissors. 
+
         // Player chooses between rock, paper, or scissors.
         function getPlayerChoice() {
             const choices = ["rock", "paper", "scissors"];
