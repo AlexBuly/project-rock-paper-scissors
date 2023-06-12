@@ -29,28 +29,27 @@
         // When button is clicked, return, rock, paper, or scissors.
         const choices = ["rock", "paper", "scissors"];
         
-        let button = document.getElementById("rock");
-        button.addEventListener("click", getPlayerChoice);
+        let rockButton = document.getElementById("rock");
+        rockButton.addEventListener("click", getPlayerSelection);
         
-
-        // Player chooses between rock, paper, or scissors.
-        function getPlayerChoice() {
-            const choice = choices[0];
+        function getPlayerSelection() {
+            let choice = choices;
+            choice[0] = "rock";
+            choice[1] = "paper";
+            choice[2] = "scissors";
             return choice;
-
         }
-            
 
         // Computer makes a choice randomly between rock, paper, or scissors.
         function getComputerChoice() {
-            //const choices = ["Rock", "Paper", "Scissors"];
+            const choices = ["Rock", "Paper", "Scissors"];
             const random = Math.floor(Math.random() * choices.length);
             return choices[random];
         }
         // Case-insenitive 
         function playRound(playerSelection, computerSelection) {
-            playerSelection = playerSelection.toLowerCase();
-            computerSelection = computerSelection.toLowerCase();
+            //playerSelection = playerSelection.toLowerCase();
+            //computerSelection = computerSelection.toLowerCase();
         // If player chooses rock and computer chooses paper, return "You lose! Paper beats rock". 
         // If player chooses paper and computer chooses scissors, return "You lose! Scissors beat paper."
         // If player chooses scissors and computer chooses rock, return "You lose! Rock beats scissors."
@@ -78,7 +77,7 @@
                 let computerScore = 0;
                 //Play 5 times 
             for (let i = 0; i < 5; i++) {
-                const playerSelection = getPlayerChoice();
+                const playerSelection = getPlayerSelection();
                 const computerSelection = getComputerChoice();
                 const roundResult = playRound(playerSelection, computerSelection)
                 console.log(roundResult);
