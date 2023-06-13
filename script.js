@@ -27,16 +27,15 @@
         */
 
         // When button is clicked, return, rock, paper, or scissors.
-        document.querySelectorAll(".game-button").forEach(item => {
-            item.addEventListener("click", getPlayerSelection);
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                console.log(button.id);
+            });
         });
 
-        function getPlayerSelection() {
-           const choices = ["rock", "paper", "scissors"];
-           choices.forEach(() => {
-            
-           });
-        }
+    
+        
 
         // Computer makes a choice randomly between rock, paper, or scissors.
         function getComputerChoice() {
@@ -75,7 +74,7 @@
                 let computerScore = 0;
                 //Play 5 times 
             for (let i = 0; i < 5; i++) {
-                const playerSelection = getPlayerSelection();
+                const playerSelection = buttons;
                 const computerSelection = getComputerChoice();
                 const roundResult = playRound(playerSelection, computerSelection)
                 console.log(roundResult);
