@@ -27,28 +27,20 @@
         */
 
         // When button is clicked, return, rock, paper, or scissors.
-        const button = document.querySelector("button");
-        button.addEventListener("click", getPlayerSelection);
-    
-        
-        
-        function getPlayerSelection() {
-            const choices = ["rock", "paper", "scissors"];
-            // If choice valid, return choice 
-            while (true) {
-                const choice = prompt("To play, enter rock, paper, or scissors").toLowerCase();
+        document.querySelectorAll(".game-button").forEach(item => {
+            item.addEventListener("click", getPlayerSelection);
+        });
 
-                if (choices.includes(choice)) {
-                    return choice;
-                } else {
-                    console.log("Invalid choice. Please enter rock, paper, or scissors");
-                }
-            }
+        function getPlayerSelection() {
+           const choices = ["rock", "paper", "scissors"];
+           choices.forEach(() => {
+            
+           });
         }
 
         // Computer makes a choice randomly between rock, paper, or scissors.
         function getComputerChoice() {
-            const choices = ["Rock", "Paper", "Scissors"];
+            const choices = ["rock", "paper", "scissors"];
             const random = Math.floor(Math.random() * choices.length);
             return choices[random];
         }
