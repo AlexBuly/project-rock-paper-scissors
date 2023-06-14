@@ -68,9 +68,9 @@
              if (playerSelection === computerSelection) {
                 return "Game tied"
              } else if (
-            (playerSelection === "rock" && computerSelection === "Scissors") ||
-            (playerSelection === "paper"&& computerSelection === "Rock") ||
-            (playerSelection === "scossors" && computerSelection === "Paper")
+            (playerSelection === "Rock" && computerSelection === "Scissors") ||
+            (playerSelection === "Paper"&& computerSelection === "Rock") ||
+            (playerSelection === "Scissors" && computerSelection === "Paper")
             ) {
                 return `You Win! ${playerSelection} beats ${computerSelection}.`;
             } else {
