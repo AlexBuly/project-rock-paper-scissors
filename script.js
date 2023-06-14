@@ -24,29 +24,39 @@
         If the player does not input a valid choice, a message displayd telling the player 
         to input rock, paper, or scissors. This is a single round. The console also keeps score. 
         The game is played for 5 rounds. 
-        */
-
-        // When button is clicked, return, rock, paper, or scissors.
-        const buttons = document.querySelectorAll("button");
-        buttons.forEach((button) => {
-            button.addEventListener("click", () => {
-                console.log(button.id);
-            });
-        });
-
-    
+        */ 
         
+         // When button is clicked, return, rock, paper, or scissors.
+         const rockBtn = document.getElementById("rock");
+         const paperBtn = document.getElementById("paper");
+         const scissorsBtn = document.getElementById("scissors");
 
-        // Computer makes a choice randomly between rock, paper, or scissors.
-        function getComputerChoice() {
-            const choices = ["rock", "paper", "scissors"];
+         rockBtn.addEventListener("click", () => {
+            playerSelection = "rock";
+            computerSelection = getComputerChoice();
+            console.log(playRound(playerSelection, computerSelection));
+         });
+
+         paperBtn.addEventListener("click", () => {
+            playerSelection = "paper";
+            computerSelection = getComputerChoice();
+            console.log(playRound(playerSelection, computerSelection));    
+         });
+
+         scissorsBtn.addEventListener("click", () => {
+            playerSelection = "scissors"
+            computerSelection = getComputerChoice();
+            console.log(playRound(playerSelection, computerSelection)); 
+         });
+
+         // Computer makes a choice randomly between rock, paper, or scissors.
+         function getComputerChoice() {
+            const choices = ["Rock", "Paper", "Scissors"];
             const random = Math.floor(Math.random() * choices.length);
             return choices[random];
         }
-        // Case-insenitive 
+ 
         function playRound(playerSelection, computerSelection) {
-            //playerSelection = playerSelection.toLowerCase();
-            //computerSelection = computerSelection.toLowerCase();
         // If player chooses rock and computer chooses paper, return "You lose! Paper beats rock". 
         // If player chooses paper and computer chooses scissors, return "You lose! Scissors beat paper."
         // If player chooses scissors and computer chooses rock, return "You lose! Rock beats scissors."
@@ -56,40 +66,14 @@
         // If player choice is not valid, return "Please input rock, paper, or scissors."
         // Else, return "Game tied."
              if (playerSelection === computerSelection) {
-                return "Game tied."
-            } else if (
-            (playerSelection === "rock" && computerSelection === "scissors") ||
-            (playerSelection === "paper" && computerSelection === "rock") ||
-            (playerSelection === "scissors" && computerSelection === "paper")
+                return "Game tied"
+             } else if (
+            (playerSelection === "rock" && computerSelection === "Scissors") ||
+            (playerSelection === "paper"&& computerSelection === "Rock") ||
+            (playerSelection === "scossors" && computerSelection === "Paper")
             ) {
                 return `You Win! ${playerSelection} beats ${computerSelection}.`;
             } else {
-                return `You Lose! ${computerSelection} beats ${playerSelection}.`
+                return `You Lose! ${computerSelection} beats ${playerSelection}.`;
             }
         }
-        
-            function game() {
-            //Player and computer score 
-                let playerScore = 0;
-                let computerScore = 0;
-                //Play 5 times 
-            for (let i = 0; i < 5; i++) {
-                const playerSelection = buttons;
-                const computerSelection = getComputerChoice();
-                const roundResult = playRound(playerSelection, computerSelection)
-                console.log(roundResult);
-                 // If player wins, increase player score by one.
-                if (roundResult.startsWith("You Win!")) {
-                    playerScore++
-                // If computer wins, increase computer score by one. 
-                } else if (roundResult.startsWith("You Lose!")) {
-                    computerScore++
-                }
-            }
-
-    console.log(`Final Score: Player ${playerScore} - Computer ${computerScore}`);
-
-        }
-
-        // Call game 
-        game();
