@@ -32,19 +32,19 @@
          const scissorsBtn = document.getElementById("scissors");
 
          rockBtn.addEventListener("click", () => {
-            playerSelection = "rock";
+            playerSelection = "Rock";
             computerSelection = getComputerChoice();
             console.log(playRound(playerSelection, computerSelection));
          });
 
          paperBtn.addEventListener("click", () => {
-            playerSelection = "paper";
+            playerSelection = "Paper";
             computerSelection = getComputerChoice();
             console.log(playRound(playerSelection, computerSelection));    
          });
 
          scissorsBtn.addEventListener("click", () => {
-            playerSelection = "scissors"
+            playerSelection = "Scissors"
             computerSelection = getComputerChoice();
             console.log(playRound(playerSelection, computerSelection)); 
          });
