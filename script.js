@@ -30,7 +30,7 @@
          const rockBtn = document.getElementById("rock");
          const paperBtn = document.getElementById("paper");
          const scissorsBtn = document.getElementById("scissors");
-         const results = document.querySelectorAll("#round-results");
+         const results = document.querySelectorAll(".round-results");
 
          rockBtn.addEventListener("click", () => {
             playerSelection = "Rock";
