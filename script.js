@@ -30,11 +30,12 @@
          const rockBtn = document.getElementById("rock");
          const paperBtn = document.getElementById("paper");
          const scissorsBtn = document.getElementById("scissors");
-         const results = document.querySelectorAll(".round-results");
+        
 
          rockBtn.addEventListener("click", () => {
             playerSelection = "Rock";
             computerSelection = getComputerChoice();
+            var results = document.querySelectorAll(".round-results");
             const resultText = playRound(playerSelection, computerSelection);
             results.textContent = resultText;
          });
@@ -42,18 +43,17 @@
          paperBtn.addEventListener("click", () => {
             playerSelection = "Paper";
             computerSelection = getComputerChoice();
-            var p = document.createElement("p");
-            p.textContent = playRound(playerSelection, computerSelection);
-            var results = querySelectorAll(".round-results");
-            results.appendChild(p);
+            var results = document.querySelectorAll(".round-results");
+            var resultText = playRound(playerSelection, computerSelection);
+            results.textContent = resultText;
          });
 
          scissorsBtn.addEventListener("click", () => {
             playerSelection = "Scissors"
             computerSelection = getComputerChoice();
             var results = document.querySelectorAll(".round-results");
-            results.textContent = playRound;
-            results.appendChild();
+            var resultText = playRound(playerSelection, computerSelection);
+            results.textContent = resultText;
          });
 
          // Computer makes a choice randomly between rock, paper, or scissors.
