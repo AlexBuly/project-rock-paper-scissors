@@ -1,5 +1,35 @@
 .round-results {
     display: flex;
-    height: 200px;
-    width: 200px;
+    flex-direction: column;
+    height: 500px;
+    width: 70%;
+    justify-content: flex-end;
+    align-items: center;
+    border: 3px solid black;
+    margin: 50px;
+    padding-bottom: 15px;
+    margin-left: 200px;
 }
+
+.game-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 70px;
+    margin-left: 50px;
+    margin-right: 170px;
+    
+}
+
+.game-buttons button {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 5px;
+    
+}
+
