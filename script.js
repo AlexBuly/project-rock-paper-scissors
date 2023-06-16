@@ -26,27 +26,30 @@
         The game is played for 5 rounds. 
         */ 
         
-         // When button is clicked, return, rock, paper, or scissors.
          const rockBtn = document.getElementById("rock");
          const paperBtn = document.getElementById("paper");
          const scissorsBtn = document.getElementById("scissors");
-        
+         const results = document.querySelector(".round-results");
 
          rockBtn.addEventListener("click", () => {
             playerSelection = "Rock";
             computerSelection = getComputerChoice();
+            results.textContent = playRound(playerSelection, computerSelection);
          });
-
          paperBtn.addEventListener("click", () => {
             playerSelection = "Paper";
             computerSelection = getComputerChoice();
+            results.textContent = playRound(playerSelection, computerSelection);
+            
+                
          });
-
          scissorsBtn.addEventListener("click", () => {
             playerSelection = "Scissors"
             computerSelection = getComputerChoice();
+            results.textContent = playRound(playerSelection, computerSelection);
+            
+            
          });
-
          // Computer makes a choice randomly between rock, paper, or scissors.
          function getComputerChoice() {
             const choices = ["Rock", "Paper", "Scissors"];
@@ -64,20 +67,14 @@
         // If player choice is not valid, return "Please input rock, paper, or scissors."
         // Else, return "Game tied."
              if (playerSelection === computerSelection) {
-                result = "Game tied";
-             } 
-              else if (
+                return "Game tied";
+             } else if (
             (playerSelection === "Rock" && computerSelection === "Scissors") ||
             (playerSelection === "Paper"&& computerSelection === "Rock") ||
             (playerSelection === "Scissors" && computerSelection === "Paper")
             ) {
-                result = `You Win! ${playerSelection} beats ${computerSelection}.`;
-            } 
-             else {
-                result = `You Lose! ${computerSelection} beats ${playerSelection}.`;
+                return `You Win! ${playerSelection} beats ${computerSelection}.`;
+            } else {
+                return `You Lose! ${computerSelection} beats ${playerSelection}.`;
             }
-            let p = document.createElement("p");
-            p.textContent = result;
-            let roundResult = document.querySelector(".round-results");
-            p.appendChild(roundResult);
         }
