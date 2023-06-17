@@ -1,4 +1,4 @@
-.round-results {
+.display {
     display: flex;
     flex-direction: column;
     height: 500px;
@@ -9,6 +9,14 @@
     margin: 50px;
     padding-bottom: 15px;
     margin-left: 200px;
+}
+
+.round-results {
+    display: flex;
+    height: 25px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .game-buttons {
