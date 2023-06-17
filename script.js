@@ -30,6 +30,7 @@
          const paperBtn = document.getElementById("paper");
          const scissorsBtn = document.getElementById("scissors");
          const results = document.querySelector(".round-results");
+         const score = document.querySelector(".score");
 
          rockBtn.addEventListener("click", () => {
             playerSelection = "Rock";
@@ -78,3 +79,17 @@
                 return `You Lose! ${computerSelection} beats ${playerSelection}.`;
             }
         }
+
+       const playScore = document.createElement("div");
+       playScore.classList.add("player-score");
+       playScore.textContent = "0"; 
+       score.appendChild(playScore);
+
+       const compScore = document.createElement("div");
+       compScore.classList.add("computer-score");
+       compScore.textContent = "0";
+       score.appendChild(compScore);
+
+       
+
+      
