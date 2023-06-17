@@ -30,7 +30,7 @@
          const paperBtn = document.getElementById("paper");
          const scissorsBtn = document.getElementById("scissors");
          const results = document.querySelector(".round-results");
-         const display = document.querySelector(".display");
+         
 
          rockBtn.addEventListener("click", () => {
             playerSelection = "Rock";
@@ -80,16 +80,9 @@
             }
         }
 
-       const playScore = document.createElement("div");
-       playScore.classList.add("player-score");
-       playScore.textContent = "0"; 
-       display.appendChild(playScore);
-
-       const compScore = document.createElement("div");
-       compScore.classList.add("computer-score");
+       const playScore = document.querySelector(".player-score");
+       playScore.textContent = "0";
+       const compScore = document.querySelector(".computer-score");
        compScore.textContent = "0";
-       display.appendChild(compScore);
-
-       
 
       
