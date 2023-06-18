@@ -69,29 +69,51 @@ button:hover {
 }
 
 .player {
-    display: flex;
     height: 100%;
     width: 50%;
-    justify-content: center;
 }
 
 .computer {
-    display: flex;
     height: 100%;
     width: 50%;
-    justify-content: center;
     border-left: 3px solid black;
 }
 
 .player-score {
-    display: flex;
+    text-align: center;
 }
 
 .computer-score {
-    display: flex;
+    text-align: center;
 }
 
 img {
     height: 150px;
     width: 150px;
+}
+
+.player img {
+    height: 250px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    max-width: -webkit-fill-available;
+    object-fit: contain;
+
+}
+
+.computer img {
+    height: 250px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    max-width: -webkit-fill-available;
+    object-fit: contain;
+    transform: scaleX(-1);
 }
