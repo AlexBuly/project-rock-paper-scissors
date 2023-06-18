@@ -84,20 +84,11 @@
         let playerScore = 0;
         let computerScore = 0;
 
-        do {
-         if (results.textContent.startsWith("You Win!")) {
-            playerScore++
-            playScore.textContent = playerScore; 
-         } else if (results.textContent.startsWith("You Lose!")) {
-            computerScore++
+        while (playerScore <= 5 && computerScore <= 5) {
+            playScore.textContent = playerScore;
             compScore.textContent = computerScore;
-         }
-        }  while (playerScore < 5 && computerScore < 5);
-
-        if (playerScore === 5) {
-         results.textContent = `YOU WIN! Player: ${playerScore} - Computer: ${computerScore}`;
-        } else if (computerScore === 5) {
-         results.textContent = `YOU LOSE! Player: ${playerScore} - Computer: ${computerScore}`;
+            playerScore++
+            computerScore++
         }
             
         
