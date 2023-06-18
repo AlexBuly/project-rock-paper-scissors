@@ -1,14 +1,22 @@
-.display {
+.container {
+    margin: 50px;
     display: flex;
     flex-direction: column;
-    height: 500px;
-    width: 70%;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    border: 3px solid black;
-    margin: 50px;
-    padding-bottom: 15px;
-    margin-left: 200px;
+}
+
+.display {
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+    min-height: auto;
+    min-width: auto;
+    width: 70%;
+    justify-content: flex-start;
+    align-items: center;
+    border: 5px solid black;
+    margin-bottom: 20px;
 }
 
 .round-results {
@@ -17,6 +25,7 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .game-buttons {
@@ -25,24 +34,52 @@
     align-items: center;
     width: 100%;
     gap: 70px;
-    margin-left: 50px;
-    margin-right: 170px;
+    flex-wrap: wrap;
+   
     
 }
 
 .game-buttons button {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid black;
+    border: 5px solid black;
     border-radius: 5px;  
+    cursor: pointer;
+    background-color: white;
 }
 
 .score {
     display: flex;
-    justify-content: flex-start;
     align-items: flex-start;
 }
 
+.player {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+}
+
+.computer {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    border-left: 3px solid black;
+}
+
+.player-score {
+    display: flex;
+}
+
+.computer-score {
+    display: flex;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+}
