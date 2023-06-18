@@ -30,7 +30,8 @@
          const paperBtn = document.getElementById("paper");
          const scissorsBtn = document.getElementById("scissors");
          const results = document.querySelector(".round-results");
-         
+         const playScore = document.querySelector(".player-score");
+         const compScore = document.querySelector(".computer-score");
 
          rockBtn.addEventListener("click", () => {
             playerSelection = "Rock";
@@ -80,9 +81,29 @@
             }
         }
 
-       const playScore = document.querySelector(".player-score");
-       playScore.textContent = "0";
-       const compScore = document.querySelector(".computer-score");
-       compScore.textContent = "0";
+        let playerScore = 0;
+        let computerScore = 0;
 
-      
+        do {
+         if (results.textContent.startsWith("You Win!")) {
+            playerScore++
+            playScore.textContent = playerScore; 
+         } else if (results.textContent.startsWith("You Lose!")) {
+            computerScore++
+            compScore.textContent = computerScore;
+         }
+        }  while (playerScore < 5 && computerScore < 5);
+
+        if (playerScore === 5) {
+         results.textContent = `YOU WIN! Player: ${playerScore} - Computer: ${computerScore}`;
+        } else if (computerScore === 5) {
+         results.textContent = `YOU LOSE! Player: ${playerScore} - Computer: ${computerScore}`;
+        }
+            
+        
+            
+        
+       
+
+
+       
