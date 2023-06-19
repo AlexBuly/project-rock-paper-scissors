@@ -32,25 +32,29 @@
          const results = document.querySelector(".round-results");
          const playScore = document.querySelector(".player-score");
          const compScore = document.querySelector(".computer-score");
+         const playerImg = document.querySelector(".player-img");
+         const computerImg = document.querySelector(".computer-img")
 
          rockBtn.addEventListener("click", () => {
             playerSelection = "Rock";
             computerSelection = getComputerChoice();
             results.textContent = playRound(playerSelection, computerSelection);
+            playerImg.innerHTML = "<img src='rock.png' alt='rock'/>"
+            computerImg.innerHTML = `<img src='${computerSelection.toLowerCase()}.png' alt='${computerSelection.toLowerCase()}'/>`;
          });
          paperBtn.addEventListener("click", () => {
             playerSelection = "Paper";
             computerSelection = getComputerChoice();
             results.textContent = playRound(playerSelection, computerSelection);
-            
-                
+            playerImg.innerHTML = "<img src='paper.png' alt='paper'/>";
+            computerImg.innerHTML = `<img src='${computerSelection.toLowerCase()}.png' alt='${computerSelection.toLowerCase()}'/>`;            
          });
          scissorsBtn.addEventListener("click", () => {
             playerSelection = "Scissors"
             computerSelection = getComputerChoice();
             results.textContent = playRound(playerSelection, computerSelection);
-            
-            
+            playerImg.innerHTML = "<img src='scissors.png' alt='scissors'/>";
+            computerImg.innerHTML = `<img src='${computerSelection.toLowerCase()}.png' alt='${computerSelection.toLowerCase()}'/>`;        
          });
          // Computer makes a choice randomly between rock, paper, or scissors.
          function getComputerChoice() {
@@ -69,15 +73,15 @@
         // If player choice is not valid, return "Please input rock, paper, or scissors."
         // Else, return "Game tied."
              if (playerSelection === computerSelection) {
-                return "Game tied";
+                return "Game tied.";
              } else if (
             (playerSelection === "Rock" && computerSelection === "Scissors") ||
             (playerSelection === "Paper"&& computerSelection === "Rock") ||
             (playerSelection === "Scissors" && computerSelection === "Paper")
             ) {
-                return `You Win! ${playerSelection} beats ${computerSelection}.`;
+                return `You win! ${playerSelection} beats ${computerSelection}.`;
             } else {
-                return `You Lose! ${computerSelection} beats ${playerSelection}.`;
+                return `You lose! ${computerSelection} beats ${playerSelection}.`;
             }
         }
 
@@ -85,8 +89,8 @@
         let computerScore = 0;
 
         while (playerScore <= 5 && computerScore <= 5) {
-            playScore.textContent = playerScore;
-            compScore.textContent = computerScore;
+            playScore.textContent = `Player: ${playerScore}`;
+            compScore.textContent = `Computer: ${computerScore}`;
             playerScore++
             computerScore++
         }
