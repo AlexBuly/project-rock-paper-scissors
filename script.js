@@ -66,31 +66,43 @@
          let computerScore = 0;
          playScore.textContent = `Player: ${playerScore++}`;
          compScore.textContent = `Computer: ${computerScore++}`;
- 
-        function playRound(playerSelection, computerSelection) {
-        // If player chooses rock and computer chooses paper, return "You lose! Paper beats rock". 
-        // If player chooses paper and computer chooses scissors, return "You lose! Scissors beat paper."
-        // If player chooses scissors and computer chooses rock, return "You lose! Rock beats scissors."
-        // If player chooses paper and computer chooses rock, return "You win! Paper beats rock". 
-        // If player chooses scissors and computer chooses paper, return "You win! Scissors beat paper."
-        // If player chooses rock and computer chooses scissors, return "You win! Rock beats scissors."
-        // If player choice is not valid, return "Please input rock, paper, or scissors."
-        // Else, return "Game tied."
-             if (playerSelection === computerSelection) {
-                return "Game tied.";
-             } else if (
-            (playerSelection === "Rock" && computerSelection === "Scissors") ||
-            (playerSelection === "Paper"&& computerSelection === "Rock") ||
-            (playerSelection === "Scissors" && computerSelection === "Paper")
-            ) {
-               playScore.textContent = `Player: ${playerScore++}`;
-                return `You win! ${playerSelection} beats ${computerSelection}.`;
-            } else {
-               compScore.textContent = `Computer: ${computerScore++}`;
-                return `You lose! ${computerSelection} beats ${playerSelection}.`;
+         
+         function playRound(playerSelection, computerSelection) {
+         // If player chooses rock and computer chooses paper, return "You lose! Paper beats rock". 
+         // If player chooses paper and computer chooses scissors, return "You lose! Scissors beat paper."
+         // If player chooses scissors and computer chooses rock, return "You lose! Rock beats scissors."
+         // If player chooses paper and computer chooses rock, return "You win! Paper beats rock". 
+         // If player chooses scissors and computer chooses paper, return "You win! Scissors beat paper."
+         // If player chooses rock and computer chooses scissors, return "You win! Rock beats scissors."
+         // If player choice is not valid, return "Please input rock, paper, or scissors."
+         // Else, return "Game tied."
+               if (playerSelection === computerSelection) {
+                  return "Game tied.";
+               } else if (
+               (playerSelection === "Rock" && computerSelection === "Scissors") ||
+               (playerSelection === "Paper"&& computerSelection === "Rock") ||
+               (playerSelection === "Scissors" && computerSelection === "Paper")
+               ) {
+                  playScore.textContent = `Player: ${playerScore++}`;
+                  if (playerScore === 6) {
+                     rockBtn.disabled = true;
+                     paperBtn.disabled = true;
+                     scissorsBtn.disabled = true;
+                     return "YOU WIN!";
+                  }
+                  return `You win! ${playerSelection} beats ${computerSelection}.`;
+               } else {
+                  compScore.textContent = `Computer: ${computerScore++}`;
+                  if (computerScore === 6) {
+                     rockBtn.disabled = true;
+                     paperBtn.disabled = true;
+                     scissorsBtn.disabled = true;
+                     return "YOU LOSE!";
+                  }
+                  return `You lose! ${computerSelection} beats ${playerSelection}.`;
+               }
             }
-         }
-       
+        
 
 
        
