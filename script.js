@@ -64,8 +64,8 @@
         }
          let playerScore = 0;
          let computerScore = 0;
-         playScore.textContent = `Player: ${playerScore}`;
-         compScore.textContent = `Computer: ${computerScore}`;
+         playScore.textContent = `Player: ${playerScore++}`;
+         compScore.textContent = `Computer: ${computerScore++}`;
  
         function playRound(playerSelection, computerSelection) {
         // If player chooses rock and computer chooses paper, return "You lose! Paper beats rock". 
