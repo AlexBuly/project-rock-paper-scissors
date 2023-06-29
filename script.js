@@ -62,6 +62,10 @@
             const random = Math.floor(Math.random() * choices.length);
             return choices[random];
         }
+         let playerScore = 0;
+         let computerScore = 0;
+         playScore.textContent = `Player: ${playerScore}`;
+         compScore.textContent = `Computer: ${computerScore}`;
  
         function playRound(playerSelection, computerSelection) {
         // If player chooses rock and computer chooses paper, return "You lose! Paper beats rock". 
@@ -79,25 +83,13 @@
             (playerSelection === "Paper"&& computerSelection === "Rock") ||
             (playerSelection === "Scissors" && computerSelection === "Paper")
             ) {
+               playScore.textContent = `Player: ${playerScore++}`;
                 return `You win! ${playerSelection} beats ${computerSelection}.`;
             } else {
+               compScore.textContent = `Computer: ${computerScore++}`;
                 return `You lose! ${computerSelection} beats ${playerSelection}.`;
             }
-        }
-
-        let playerScore = 0;
-        let computerScore = 0;
-
-        while (playerScore <= 5 && computerScore <= 5) {
-            playScore.textContent = `Player: ${playerScore}`;
-            compScore.textContent = `Computer: ${computerScore}`;
-            playerScore++
-            computerScore++
-        }
-            
-        
-            
-        
+         }
        
 
 
