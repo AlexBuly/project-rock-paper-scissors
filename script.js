@@ -76,30 +76,31 @@
          // If player chooses rock and computer chooses scissors, return "You win! Rock beats scissors."
          // If player choice is not valid, return "Please input rock, paper, or scissors."
          // Else, return "Game tied."
-               if (playerSelection === computerSelection) {
-                  return "Game tied.";
-               } else if (
-               (playerSelection === "Rock" && computerSelection === "Scissors") ||
-               (playerSelection === "Paper"&& computerSelection === "Rock") ||
-               (playerSelection === "Scissors" && computerSelection === "Paper")
-               ) {
-                  playScore.textContent = `Player: ${playerScore++}`;
-                  if (playerScore === 6) {
-                     disableButtons();
-                     showResetButton();
-                     return `YOU WIN! Final Score: ${playerScore} - ${computerScore}`;
-                  }
-                  return `You win! ${playerSelection} beats ${computerSelection}.`;
-               } else {
-                  compScore.textContent = `Computer: ${computerScore++}`;
-                  if (computerScore === 6) {
-                     disableButtons();
-                     showResetButton();
-                     return `YOU LOSE! Final Score: ${playerScore} - ${computerScore}`;
-                  }
-                  return`You lose! ${computerSelection} beats ${playerSelection}.`;
-               }
+         if (playerSelection === computerSelection) {
+            return "Game tied.";
+         } else if (
+         (playerSelection === "Rock" && computerSelection === "Scissors") ||
+         (playerSelection === "Paper"&& computerSelection === "Rock") ||
+         (playerSelection === "Scissors" && computerSelection === "Paper")
+         ) {
+            playScore.textContent = `Player: ${playerScore++}`;
+            if (playerScore === 6) {
+               disableButtons();
+               showResetButton();
+               return `YOU WIN! Final Score: Player ${--playerScore} - Computer ${--computerScore}`;
             }
+            return `You win! ${playerSelection} beats ${computerSelection}.`;
+         } else {
+            compScore.textContent = `Computer: ${computerScore++}`;
+            if (computerScore === 6) {
+               disableButtons()
+               showResetButton();
+               return `YOU LOSE! Final Score: Player ${--playerScore} - Computer ${--computerScore}`;
+            }
+            return `You lose! ${computerSelection} beats ${playerSelection}.`;
+         }
+         }
+         
 
             function showResetButton() {
                const resetBtn = document.createElement("button");
