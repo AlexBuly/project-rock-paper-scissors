@@ -85,24 +85,30 @@
                ) {
                   playScore.textContent = `Player: ${playerScore++}`;
                   if (playerScore === 6) {
-                     rockBtn.disabled = true;
-                     paperBtn.disabled = true;
-                     scissorsBtn.disabled = true;
+                     disableButtons();
                      return "YOU WIN!";
                   }
                   return `You win! ${playerSelection} beats ${computerSelection}.`;
                } else {
                   compScore.textContent = `Computer: ${computerScore++}`;
                   if (computerScore === 6) {
-                     rockBtn.disabled = true;
-                     paperBtn.disabled = true;
-                     scissorsBtn.disabled = true;
+                     disableButtons();
                      return "YOU LOSE!";
                   }
                   return `You lose! ${computerSelection} beats ${playerSelection}.`;
                }
             }
+
+            function disableButtons() {
+               rockBtn.disabled = true;
+               paperBtn.disabled = true;
+               scissorsBtn.disabled = true;
+               rockBtn.classList.add("disabled");
+               paperBtn.classList.add("disabled");
+               scissorsBtn.classList.add("disabled");
+            }
         
+            
 
 
        
