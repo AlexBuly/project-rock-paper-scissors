@@ -126,3 +126,11 @@ img {
     pointer-events: none;
     opacity: 0.5;
 }
+
+div.container button {
+    font-family: "Candal", sans-serif;
+    background-color: white;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border: 3px solid black;
+}
