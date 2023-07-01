@@ -34,7 +34,6 @@
          const compScore = document.querySelector(".computer-score");
          const playerImg = document.querySelector(".player-img");
          const computerImg = document.querySelector(".computer-img");
-         const gameResults = document.querySelector(".game-results");
 
          rockBtn.addEventListener("click", () => {
             playerSelection = "Rock";
@@ -87,18 +86,28 @@
                   playScore.textContent = `Player: ${playerScore++}`;
                   if (playerScore === 6) {
                      disableButtons();
-                     gameResults.textContent = "YOU WIN!"
+                     showResetButton();
+                     return `YOU WIN! Final Score: ${playerScore} - ${computerScore}`;
                   }
                   return `You win! ${playerSelection} beats ${computerSelection}.`;
                } else {
                   compScore.textContent = `Computer: ${computerScore++}`;
                   if (computerScore === 6) {
                      disableButtons();
-                     gameResults.textContent = "YOU LOSE!"
+                     showResetButton();
+                     return `YOU LOSE! Final Score: ${playerScore} - ${computerScore}`;
                   }
-                  return `You lose! ${computerSelection} beats ${playerSelection}.`;
+                  return`You lose! ${computerSelection} beats ${playerSelection}.`;
                }
             }
+
+            function showResetButton() {
+               const resetBtn = document.createElement("button");
+               resetBtn.textContent = "Reset Game";
+               resetBtn.addEventListener("click", resetGame);
+               results.insertAdjacentElement("afterend", resetBtn);
+             }
+             
 
             function resetGame() {
                playerScore = 0;
@@ -106,10 +115,10 @@
                playScore.textContent = `Player: ${playerScore}`;
                compScore.textContent = `Computer: ${computerScore}`;
                results.textContent = "";
-               gameResults.textContent = "";
-               enableButtons();
                playerImg.innerHTML = "";
                computerImg.innerHTML = "";
+               enableButtons();
+               hideResetButton();
              }
              
              function disableButtons() {
@@ -120,7 +129,7 @@
                paperBtn.classList.add("disabled");
                scissorsBtn.classList.add("disabled");
              }
-
+             
              function enableButtons() {
                rockBtn.disabled = false;
                paperBtn.disabled = false;
@@ -130,10 +139,9 @@
                scissorsBtn.classList.remove("disabled");
              }
              
-             const resultsContainer = document.querySelector('.container');
-             const resetBtn = document.createElement('button');
-             resetBtn.textContent = 'Reset Game';
-             resetBtn.addEventListener('click', resetGame);
-             resultsContainer.appendChild(resetBtn);
-
-       
+             function hideResetButton() {
+               const resetBtn = document.querySelector("button");
+               if (resetBtn) {
+                 resetBtn.remove();
+               }
+             }
