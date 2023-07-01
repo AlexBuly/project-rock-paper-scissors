@@ -108,6 +108,16 @@
                paperBtn.classList.add("disabled");
                scissorsBtn.classList.add("disabled");
             }
+
+            function resetGame() {
+               playerScore = 0; 
+               computerScore = 0;
+               playScore.textContent = `Player: ${playerScore}`;
+               compScore.textContent = `Computer: ${computerScore}`;
+               results.textContent = "";
+               computerImg.innerHTML = "";
+               gameResults.textContent = "";
+            }
         
             
 
