@@ -117,6 +117,7 @@
                results.textContent = "";
                computerImg.innerHTML = "";
                gameResults.textContent = "";
+               enableButtons();
             }
 
             function enableButtons() {
@@ -127,6 +128,11 @@
                paperBtn.classList.remove("disabled");
                scissorsBtn.classList.remove("disabled");
             }
+
+            const resetBtn = document.createElement("button");
+            resetBtn.textContent = "Reset Game";
+            resetBtn.addEventListener("click", resetGame);
+            gameResults.appendChild(resetBtn);
         
             
 
