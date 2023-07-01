@@ -34,7 +34,7 @@
          const compScore = document.querySelector(".computer-score");
          const playerImg = document.querySelector(".player-img");
          const computerImg = document.querySelector(".computer-img");
-         const gameResults = document.querySelector(".game-resutls");
+         const gameResults = document.querySelector(".game-results");
 
          rockBtn.addEventListener("click", () => {
             playerSelection = "Rock";
@@ -87,54 +87,53 @@
                   playScore.textContent = `Player: ${playerScore++}`;
                   if (playerScore === 6) {
                      disableButtons();
-                     gameResults.textContent = "YOU WIN!";
+                     gameResults.textContent = "YOU WIN!"
                   }
                   return `You win! ${playerSelection} beats ${computerSelection}.`;
                } else {
                   compScore.textContent = `Computer: ${computerScore++}`;
                   if (computerScore === 6) {
                      disableButtons();
-                     gameResults.textContent = "YOU LOSE!";
+                     gameResults.textContent = "YOU LOSE!"
                   }
                   return `You lose! ${computerSelection} beats ${playerSelection}.`;
                }
             }
 
-            function disableButtons() {
+            function resetGame() {
+               playerScore = 0;
+               computerScore = 0;
+               playScore.textContent = `Player: ${playerScore}`;
+               compScore.textContent = `Computer: ${computerScore}`;
+               results.textContent = "";
+               gameResults.textContent = "";
+               enableButtons();
+               playerImg.innerHTML = "";
+               computerImg.innerHTML = "";
+             }
+             
+             function disableButtons() {
                rockBtn.disabled = true;
                paperBtn.disabled = true;
                scissorsBtn.disabled = true;
                rockBtn.classList.add("disabled");
                paperBtn.classList.add("disabled");
                scissorsBtn.classList.add("disabled");
-            }
+             }
 
-            function resetGame() {
-               playerScore = 0; 
-               computerScore = 0;
-               playScore.textContent = `Player: ${playerScore}`;
-               compScore.textContent = `Computer: ${computerScore}`;
-               results.textContent = "";
-               computerImg.innerHTML = "";
-               gameResults.textContent = "";
-               enableButtons();
-            }
-
-            function enableButtons() {
+             function enableButtons() {
                rockBtn.disabled = false;
                paperBtn.disabled = false;
                scissorsBtn.disabled = false;
                rockBtn.classList.remove("disabled");
                paperBtn.classList.remove("disabled");
                scissorsBtn.classList.remove("disabled");
-            }
-
-            const resetBtn = document.createElement("button");
-            resetBtn.textContent = "Reset Game";
-            resetBtn.addEventListener("click", resetGame);
-            gameResults.appendChild(resetBtn);
-        
-            
-
+             }
+             
+             const resultsContainer = document.querySelector('.container');
+             const resetBtn = document.createElement('button');
+             resetBtn.textContent = 'Reset Game';
+             resetBtn.addEventListener('click', resetGame);
+             resultsContainer.appendChild(resetBtn);
 
        
