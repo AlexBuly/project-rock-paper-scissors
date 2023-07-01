@@ -118,6 +118,15 @@
                computerImg.innerHTML = "";
                gameResults.textContent = "";
             }
+
+            function enableButtons() {
+               rockBtn.disabled = false;
+               paperBtn.disabled = false;
+               scissorsBtn.disabled = false;
+               rockBtn.classList.remove("disabled");
+               paperBtn.classList.remove("disabled");
+               scissorsBtn.classList.remove("disabled");
+            }
         
             
 
