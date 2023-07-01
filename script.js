@@ -33,7 +33,8 @@
          const playScore = document.querySelector(".player-score");
          const compScore = document.querySelector(".computer-score");
          const playerImg = document.querySelector(".player-img");
-         const computerImg = document.querySelector(".computer-img")
+         const computerImg = document.querySelector(".computer-img");
+         const gameResults = document.querySelector(".game-resutls");
 
          rockBtn.addEventListener("click", () => {
             playerSelection = "Rock";
@@ -86,14 +87,14 @@
                   playScore.textContent = `Player: ${playerScore++}`;
                   if (playerScore === 6) {
                      disableButtons();
-                     return "YOU WIN!";
+                     gameResults.textContent = "YOU WIN!";
                   }
                   return `You win! ${playerSelection} beats ${computerSelection}.`;
                } else {
                   compScore.textContent = `Computer: ${computerScore++}`;
                   if (computerScore === 6) {
                      disableButtons();
-                     return "YOU LOSE!";
+                     gameResults.textContent = "YOU LOSE!";
                   }
                   return `You lose! ${computerSelection} beats ${playerSelection}.`;
                }
