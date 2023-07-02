@@ -64,8 +64,8 @@
         }
          let playerScore = 0;
          let computerScore = 0;
-         playScore.textContent = `Player: ${playerScore++}`;
-         compScore.textContent = `Computer: ${computerScore++}`;
+         playScore.textContent = `Player: ${playerScore}`;
+         compScore.textContent = `Computer: ${computerScore}`;
          
          function playRound(playerSelection, computerSelection) {
          // If player chooses rock and computer chooses paper, return "You lose! Paper beats rock". 
@@ -83,19 +83,19 @@
          (playerSelection === "Paper"&& computerSelection === "Rock") ||
          (playerSelection === "Scissors" && computerSelection === "Paper")
          ) {
-            playScore.textContent = `Player: ${playerScore++}`;
-            if (playerScore === 6) {
+            playScore.textContent = `Player: ${++playerScore}`;
+            if (playerScore === 5) {
                disableButtons();
                showResetButton();
-               return `YOU WIN! Final Score: Player ${--playerScore} - Computer ${--computerScore}`;
+               return `YOU WIN! Final Score: Player ${playerScore} - Computer ${computerScore}`;
             }
             return `You win! ${playerSelection} beats ${computerSelection}.`;
          } else {
-            compScore.textContent = `Computer: ${computerScore++}`;
-            if (computerScore === 6) {
+            compScore.textContent = `Computer: ${++computerScore}`;
+            if (computerScore === 5) {
                disableButtons()
                showResetButton();
-               return `YOU LOSE! Final Score: Player ${--playerScore} - Computer ${--computerScore}`;
+               return `YOU LOSE! Final Score: Player ${playerScore} - Computer ${computerScore}`;
             }
             return `You lose! ${computerSelection} beats ${playerSelection}.`;
          }
