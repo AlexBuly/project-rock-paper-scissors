@@ -77,7 +77,7 @@
          // If player choice is not valid, return "Please input rock, paper, or scissors."
          // Else, return "Game tied."
          if (playerSelection === computerSelection) {
-            return "Game tied.";
+            return "Tie.";
          } else if (
          (playerSelection === "Rock" && computerSelection === "Scissors") ||
          (playerSelection === "Paper"&& computerSelection === "Rock") ||
@@ -89,7 +89,7 @@
                showResetButton();
                return `YOU WIN! Final Score: Player ${playerScore} - Computer ${computerScore}`;
             }
-            return `You win! ${playerSelection} beats ${computerSelection}.`;
+            return `${playerSelection} beats ${computerSelection}.`;
          } else {
             compScore.textContent = `Computer: ${++computerScore}`;
             if (computerScore === 5) {
@@ -97,7 +97,7 @@
                showResetButton();
                return `YOU LOSE! Final Score: Player ${playerScore} - Computer ${computerScore}`;
             }
-            return `You lose! ${computerSelection} beats ${playerSelection}.`;
+            return `${computerSelection} beats ${playerSelection}.`;
          }
          }
          
